@@ -12,6 +12,8 @@ public class Snake extends TimerTask implements KeyListener {
 
     int height = 300; int width = 400;   //pixels
     int squareSize = 50;
+    
+    int speed = 300;   // 300 = update every 300 ms.  Larger number = slower game
 
     int xSquares = width/squareSize;
     int ySquares = height/squareSize;
@@ -54,7 +56,7 @@ public class Snake extends TimerTask implements KeyListener {
 
                 frame.setVisible(true);
                 java.util.Timer timer = new java.util.Timer();   // set up timer - update game every tick
-                timer.scheduleAtFixedRate(Snake.this, 0, 300);   // 300 = update every 300 ms.  Larger number = slower game
+                timer.scheduleAtFixedRate(Snake.this, 0, speed);  
             }
         });
     }
